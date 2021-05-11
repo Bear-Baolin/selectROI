@@ -33,5 +33,25 @@ namespace opencvSharp
                     break;
             }
         }
+        public static int max(byte[] a)
+        {
+            int temp = 0;
+            int max = 0;
+            if (a.Length>0)
+            {
+
+                for (int i = 0; i < a.Length; i++)
+                {
+                    temp = a[i];
+                    if (temp > max)
+                    {
+                        max = temp;
+                    }
+                }
+            }
+ 
+            return max;
+
+        }
     }
 }

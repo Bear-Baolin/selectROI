@@ -34,16 +34,20 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Color_Histogram = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // img_show
             // 
             this.img_show.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.img_show.Location = new System.Drawing.Point(32, 405);
+            this.img_show.Location = new System.Drawing.Point(32, 161);
             this.img_show.Name = "img_show";
-            this.img_show.Size = new System.Drawing.Size(101, 33);
+            this.img_show.Size = new System.Drawing.Size(117, 33);
             this.img_show.TabIndex = 0;
             this.img_show.Text = "显示图片";
             this.img_show.UseVisualStyleBackColor = true;
@@ -58,31 +62,32 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseDown += pictureBox1_MouseDown;
-            this.pictureBox1.MouseMove += pictureBox1_MouseMove;
-            this.pictureBox1.MouseUp += pictureBox1_MouseUp;
-            this.pictureBox1.Paint += pictureBox1_Paint;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(32, 92);
+            this.textBox1.Location = new System.Drawing.Point(32, 37);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 28);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(32, 158);
+            this.textBox2.Location = new System.Drawing.Point(32, 71);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(152, 28);
             this.textBox2.TabIndex = 3;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(32, 231);
+            this.textBox3.Location = new System.Drawing.Point(32, 105);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(152, 28);
             this.textBox3.TabIndex = 4;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // pictureBox2
             // 
@@ -93,13 +98,45 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(209, 405);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(546, 491);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
+            // Color_Histogram
+            // 
+            this.Color_Histogram.Location = new System.Drawing.Point(32, 210);
+            this.Color_Histogram.Name = "Color_Histogram";
+            this.Color_Histogram.Size = new System.Drawing.Size(117, 36);
+            this.Color_Histogram.TabIndex = 7;
+            this.Color_Histogram.Text = "直方图";
+            this.Color_Histogram.UseVisualStyleBackColor = true;
+            this.Color_Histogram.Click += new System.EventHandler(this.Color_Histogram_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(32, 261);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 33);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "RGB直方图";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1165, 685);
+            this.ClientSize = new System.Drawing.Size(1186, 908);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Color_Histogram);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -111,6 +148,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +162,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button Color_Histogram;
+        private System.Windows.Forms.Button button2;
     }
 }
 
